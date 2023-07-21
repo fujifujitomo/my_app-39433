@@ -1,12 +1,21 @@
-<header>
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>ペット日誌</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="users.css">
+</head>
+
+<header class="header">
   <div class="heading">
    <div class="title">ユーザーログイン</div>
   </div>
 </header>
-        <%# 「モデル名」にはUserモデルであれば@userを渡しましょう。%>
-        <%# 「ログイン機能へのパス」は、devise導入後にrails routesを実行してdevise/sessions#createへのパスを確認し、記載してください。 %>
-        <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+
       <div class="content">
+        <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+
         <div class="users-form">
           <%= f.label :email, "メールアドレス" %><br />
           <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
@@ -21,3 +30,5 @@
           <%= f.submit "ログイン", class: :form__btn %>
         </div>
       <% end %>
+    </div>
+</html>
