@@ -10,7 +10,7 @@
   <body>
     <header>
       <div class="header">
-        <div class="title">ペット情報 <!--<%= "#{@name}情報"%>--> </div>
+        <div class="title"><%= "#{@pet.name}情報"%></div>
         <div class="header_button">
           <input type="image" src="image/edit.png" alt="編集へ"class="pet_infomation_button">
           <input type="image" src="image/addition.png" alt="追加へ"class="pet_infomation_button">
@@ -30,7 +30,7 @@
         <tbody>
           <tr>
             <th class="table__col1">名前</th>
-            <td class="table__col2"><%=@name %></td>
+            <td class="table__col2"><%= @pet.name %></td>
           </tr>
           <tr>
             <th class="table__col1">種類</th>
@@ -46,7 +46,6 @@
           </tr>
         </tbody>
       </table>
-    </div>
-
-  </body>
+     </div>
+       </body>
 </html>
