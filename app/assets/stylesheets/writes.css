@@ -1,0 +1,89 @@
+/* リセットCSS */
+body {
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+/* ヘッダー */
+
+.header {
+  height: 100%;
+  width: 100%;
+  background-color: #d5f1e1;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-family: 'Aoboshi One', serif;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.title {
+  font-size: 40px;
+  text-align: center;
+  padding: 10px;
+}
+
+.header_button {
+  position: absolute;
+  right: 100px;
+}
+
+/* メイン */
+
+.writes_content_top {
+  width: 25%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+}
+
+.icon_1,.icon_2 {
+}
+ 
+.writes_content_bottom {
+  width: 25%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+}
+
+.writes_content_label {
+  width: 100%;
+  font-size: 20px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.memo, .date_time, .schedule {
+  width: 100%;
+  height: 80%;
+  border: 2px solid #DEDEDE;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.send {
+  width: 50%;
+  margin: 30px auto;
+  padding: 10px;
+  border: 1px solid white;
+  background-color: #b9e0bb;
+  color:white;
+  display: block;
+  font-size: 25px;
+}
