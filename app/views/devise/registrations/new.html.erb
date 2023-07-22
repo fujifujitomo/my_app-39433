@@ -1,13 +1,21 @@
-<header>
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>ペット日誌</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="users.css">
+</head>
+
+<header class="header">
   <div class="heading">
    <div class="title">ユーザー登録</div>
   </div>
 </header>
 
-        <%# 「モデル名」にはUserモデルであれば@userを渡しましょう。%>
-        <%# 「新規登録機能へのパス」は、devise導入後にrails routesを実行してdevise/registrations#createへのパスを確認し、記載してください。 %>
-    <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
-      <div class="content">
+  <div class="content">
+    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="users-form">
         <%= f.label :name, "ユーザー名" %><br />
@@ -33,5 +41,6 @@
         <%= f.submit "ＯＫ！", class: :form__btn  %>
       </div>
 
-      </div>
     <% end %>
+  </div>
+</html>
