@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="writes.css">
+    <title>fam のーと</title>
+  </head>
+
+<body>
+  <header>
+    <div class="header">
+      <div class="title">
+      <%= Date.current.strftime('%Y年 %m月 %d日') %>
+      </div>
+      <div class="header_button">
+
+        <%= link_to image_tag('addition1.png'), writes_path(@writes) %>
+        <%= link_to image_tag('calender.png'), writes_path(@writes) %>
+      </div>
+    </div>
+  </header>
+
+  
+
+
+  <div class="writes_day-main">
+
+    <div class="writes-day_contents">
+
+      <div class="birthday-content">
+          <%= image_tag 'happy.png' ,size: "300x100"%> <!--もし記念日なら表示-->
+      </div>
+
+
+      <!--<div class="schedule-content">
+        <div class="icon">
+          <%= image_tag 'schedule.png' %>
+        </div>
+          <div class="write-schedule">病院</div>
+      </div>-->
+
+      <div class="icon">
+          <%= image_tag 'star.png', class:'icon' %>
+      </div>
+      <div class="star-content">
+        <div class="write-icon">うんち</div>
+        <div class="write-input_date">9:00
+          <div class="write-memo">ゆるい</div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </div>
+</body>
+
+</html>

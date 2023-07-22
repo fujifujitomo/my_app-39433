@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="writes.css">
-    <title>ペット日誌</title>
+    <title>fam のーと</title>
   </head>
 
 <body>
@@ -12,14 +12,8 @@
     <div class="header">
       <div class="title">記録</div>
       <div class="header_button">
-        <input type="image" src="time.png" alt="一覧へ"class="time_button">
-        <input type="image" src="calender.png" alt="カレンダーへ"class="time_button">
-
-        <input type="image" name="time_button" value="一覧へ" id="meal" checked><label for="一覧へ"></label>
-        <input type="image" name="time_button" value="カレンダーへ" id="poop" checked><label for="カレンダーへ"></label>
-
-        <%= link_to image_tag('time.png'), 'write_path' %><!--記録へ-->
-        <%= link_to image_tag('calender.png'), 'writes_path' %><!--カレンダーへ-->
+        <%= link_to image_tag('time.png'), '/' %><!--記録へ-->
+        <%= link_to image_tag('calender.png'), writes_path(@writes) %><!--カレンダーへ-->
       </div>
     </div>
   </header>
