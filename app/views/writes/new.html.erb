@@ -12,8 +12,14 @@
     <div class="header">
       <div class="title">記録</div>
       <div class="header_button">
-        <input type="image" src="image/time.png" alt="一覧へ"class="time_button">
-        <input type="image" src="image/calender.png" alt="カレンダーへ"class="time_button">
+        <input type="image" src="time.png" alt="一覧へ"class="time_button">
+        <input type="image" src="calender.png" alt="カレンダーへ"class="time_button">
+
+        <input type="image" name="time_button" value="一覧へ" id="meal" checked><label for="一覧へ"></label>
+        <input type="image" name="time_button" value="カレンダーへ" id="poop" checked><label for="カレンダーへ"></label>
+
+        <%= link_to image_tag('time.png'), 'write_path' %><!--記録へ-->
+        <%= link_to image_tag('calender.png'), 'writes_path' %><!--カレンダーへ-->
       </div>
     </div>
   </header>
@@ -24,17 +30,17 @@
 
       <div class="writes_content_top">
         <div class="icon_1">
-          <input type="radio" name="must-button" value="1" id="meal" checked><label for="meal">ごはん</label>
-          <input type="radio" name="must-button" value="2" id="poop" checked><label for="poop">うんち</label>
-          <input type="radio" name="must-button" value="3" id="pee" checked><label for="pee">おしっこ</label>
-          <input type="radio" name="must-button" value="4" id="walk" checked><label for="walk">散歩</label>
+          <input type="radio" name="must-button" value="1" id="meal" checked><label for="meal"></label>
+          <input type="radio" name="must-button" value="2" id="poop" checked><label for="poop"></label>
+          <input type="radio" name="must-button" value="3" id="pee" checked><label for="pee"></label>
+          <input type="radio" name="must-button" value="4" id="walk" checked><label for="walk"></label>
         </div>
 
         <div class="icon_2">
-          <input type="radio" name="must-button" value="5" id="vomit" checked><label for="vomit">嘔吐</label>
-          <input type="radio" name="must-button" value="6" id="shampoo" checked><label for="shampoo">シャンプー</label>
-          <input type="radio" name="must-button" value="7" id="trimming" checked><label for="trimming">トリミング</label>
-          <input type="radio" name="must-button" value="8" id="medicine" checked><label for="medicine">薬</label>
+          <input type="radio" name="must-button" value="5" id="vomit" checked><label for="vomit"></label>
+          <input type="radio" name="must-button" value="6" id="shampoo" checked><label for="shampoo"></label>
+          <input type="radio" name="must-button" value="7" id="trimming" checked><label for="trimming"></label>
+          <input type="radio" name="must-button" value="8" id="medicine" checked><label for="medicine"></label>
         </div>
       </div>
 
