@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>fam のーと</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="pet_show.css">
+  </head>
+
+  <body>
+    <header>
+      <div class="header">
+        <div class="title"><%= "#{@pet.name}情報"%></div>
+        <div class="header_button">
+          <input type="image" src="image/edit.png" alt="編集へ"class="pet_infomation_button">
+          <input type="image" src="image/addition.png" alt="追加へ"class="pet_infomation_button">
+          <input type="image" src="image/return.png" alt="戻る"class="pet_infomation_button">
+        </div>
+      </div>
+   </header>
+
+    <div class="pet_content_up">
+      <div class='pet_img'>
+        <img src="image/test.JPG" alt="ペット画像" width="200px" height="200px">
+      </div>
+    </div>
+
+    <div class="pet_content_down">
+     <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">名前</th>
+            <td class="table__col2"><%= @pet.name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">種類</th>
+            <td class="table__col2"><%= @pet.kind %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">誕生日</th>
+            <td class="table__col2"><%= @pet.birthday %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">ユーザー名</th>
+            <td class="table__col2"><%= @user.name %></td>
+          </tr>
+        </tbody>
+      </table>
+     </div>
+       </body>
+</html>

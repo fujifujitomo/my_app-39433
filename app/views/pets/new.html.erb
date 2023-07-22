@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>fam のーと</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="users.css">
+</head>
+
+  <header class="header">
+    <div class="heading">
+      <div class="title">ペット登録</div>
+      <!--input type="submit" value="あとで登録" class="button"-->
+    </div>
+  </header>
+
+  <div class="content">
+    <%= form_with(model: @pet, local: true) do |form| %>
+
+      <div class="pet-form">
+      <%= form.label :imag, "写真" %><br />
+       <input type="file" class="pet_image"><br>
+      </div>
+
+      <div class="pet-form">
+        <%= form.label :name, "ペット名" %><br />
+        <%= form.text_field :name, id:"name"%>
+      </div>
+
+      <div class="pet-form">
+        <%= form.label :gender, "性別" %><br />
+        <%= form.radio_button :gender, :male %>
+        <%= form.label :gender, "オス", {value: :male, style: "display: inline-block;"} %>
+        <%= form.radio_button :gender, :female %>
+        <%= form.label :gender, "メス", {value: :female, style: "display: inline-block;"} %>
+        <%= form.radio_button :gender, :female %>
+        <%= form.label :gender, "わからない", {value: :unknown, style: "display: inline-block;"} %>
+      </div>
+
+      <div class="pet-form">
+        <%= form.label :kind, "種類" %><br />
+        <%= form.text_field :kind, id:"kind" %>
+      </div>
+
+      <div class="pet-form">
+        <%= form.label :birthday, "誕生日" %><br />
+        <%= form.date_field :birthday, id:"birthday" %>
+      </div> 
+
+      <!--<div class="pet-form">
+        <%= form.label :aniversary, "記念日" %><br />
+        <%= form.date_field :aniversary, id:"aniversary" %>
+      </div> 
+
+      <div class="pet-form">
+        <%= form.label :aniversary_name, "記念日名" %><br />
+        <%= form.text_field :aniversary_name, id:"aniversary_name" %>
+      </div> -->
+
+      <div class="actions">
+        <%= form.submit "ＯＫ！", class: :form__btn  %>
+      </div>
+
+    <% end %>
+  </div>
