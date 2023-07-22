@@ -76,28 +76,36 @@ input[type=radio]+label:before{
 }
 
 input[type=radio][value="1"]+label:before{
-	background-image: url(image/meal.png);
+	background-image: url(meal.png);
 }
 input[type=radio][value="2"]+label:before{
-	background-image: url(image/poop.png);
+	background-image: url(poop.png);
 }
 input[type=radio][value="3"]+label:before{
-	background-image: url(image/pee.png);
+	background-image: url(pee.png);
 }
 input[type=radio][value="4"]+label:before{
-	background-image: url(image/walk.png);
+	background-image: url(walk.png);
 }
 input[type=radio][value="5"]+label:before{
-	background-image: url(image/vomit.png);
+	background-image: url(vomit.png);
 }
 input[type=radio][value="6"]+label:before{
-	background-image: url(image/shampoo.png);
+	background-image: url(shampoo.png);
 }
 input[type=radio][value="7"]+label:before{
-	background-image: url(image/trimming.png);
+	background-image: url(trimming.png);
 }
 input[type=radio][value="8"]+label:before{
-	background-image: url(image/medicine.png);
+	background-image: url(medicine.png);
+}
+input[type=radio]:checked+label::before{
+  border: 1px solid #7a7878;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+input[type=radio]{
+  display: none;
 }
 
 
