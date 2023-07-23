@@ -1,0 +1,171 @@
+/* リセットCSS */
+body {
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+ul,li {
+  padding: 0;
+  margin: 0;
+}
+  
+/* -------基本ヘッダー-------- */
+
+header {
+  height: 70px;
+  background-color: #ffffff;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+  
+.heading {
+  display: flex;
+  justify-content: space-between;
+  padding: auto;
+}
+  
+.title {
+  font-size: 30px;
+  color: #7a7878;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 5px solid #7a7878;
+  font-family: 'Aoboshi One', serif;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Potta One', cursive;
+}
+
+/* -------users ページ-------- */
+
+.user_content {
+  height: calc(100vh - 65px);
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+}
+
+.user-form {
+  margin-bottom: 5px;
+}
+
+.user-form input[type="text"],
+.user-form input[type="email"],
+.user-form input[type="password"] {
+  border: 2px solid #7a7878;
+  border-radius: 5%;
+}
+
+.user-form label {
+  font-size: 15px;
+  color: #7a7878;
+  font-family: 'Aoboshi One', serif;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Potta One', cursive;
+}
+
+.radio-field {
+  width: 100%;
+  font-size: 16px;
+  padding: 15px;
+  border: 1px solid #b5aaaa;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form__btn {
+  width: 50%;
+  margin: 30px auto;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 5%;
+  background-color: #b9e0bb;
+  color:white;
+  display: block;
+  font-size: 20px;
+}
+
+/* -------pets ページ-------- */
+
+.time_button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.pet_image {
+  margin: 5px 0 10px 0;
+}
+
+.pet-form {
+  margin-bottom: 10px;
+}
+
+.pet-form input[type="text"],
+.pet-form input[type="date"]{
+  border: 2px solid #7a7878;
+  border-radius: 5%;
+
+}
+
+.pet-form label {
+  font-size: 15px;
+  color: #7a7878;
+  font-family: 'Aoboshi One', serif;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Potta One', cursive;
+}
+
+/* pets ページ */
+
+.pet_content_up {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 30px auto;
+}
+
+.pet_img {
+  text-align: center;
+}
+
+.pet_content_down{
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  margin: auto
+}
+
+.table{
+  border-collapse: collapse;
+  margin-bottom: 32px;
+  width: 50%;
+}
+.table__col1{
+  text-align: left;
+  font-weight: bold;
+  background: #fafafa;
+  border-collapse: collapse;
+  border: 1px solid #f5f5f5;
+  width: 30%;
+  padding: 8px;
+  height: 10%;
+}
+.table__col2{
+  text-align: left;
+  border: 1px solid #f5f5f5;
+  border-collapse: collapse;
+  width: 70%;
+  padding: 16px 8px;
+}
+

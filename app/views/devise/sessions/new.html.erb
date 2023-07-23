@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <html>
- <head>
-  <title>ペット日誌</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="users.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="user.css">
+    <title>fam のーと</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Open+Sans:wght@300&family=Potta+One&display=swap" rel="stylesheet">
+  </head>
 
-<header class="header">
-  <div class="heading">
-   <div class="title">ユーザーログイン</div>
-  </div>
-</header>
+  <body>
+    <header>
+      <div class="header">
+        <div class="title">ユーザーログイン</div>
+      </div>
+    </header>
 
-      <div class="content">
-        <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+    <div class="user_content">
+    <div class="user_contents">
+      <%= form_with model: @user, url: user_session_path, local: true do |f| %>
 
-        <div class="users-form">
+        <div class="user-form">
           <%= f.label :email, "メールアドレス" %><br />
           <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
         </div>
 
-        <div class="users-form">
+        <div class="user-form">
           <%= f.label :password, "パスワード（6文字以上）" %><br />
           <%= f.password_field :password, id:"user_password", autocomplete: "current-password" %>
         </div>
 
-        <div class="users-form">
+        <div class="user-form">
           <%= f.submit "ログイン", class: :form__btn %>
         </div>
       <% end %>
     </div>
+    </div>
+  </body>
 </html>

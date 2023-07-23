@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html>
- <head>
-  <title>fam のーと</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="users.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="user.css">
+    <title>fam のーと</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Open+Sans:wght@300&family=Potta+One&display=swap" rel="stylesheet">
+  </head>
 
-  <header class="header">
-    <div class="heading">
-      <div class="title">ペット登録</div>
-      <!--input type="submit" value="あとで登録" class="button"-->
-    </div>
-  </header>
 
-  <div class="content">
+  <body>
+    <header>
+      <div class="header">
+        <div class="title">ペット登録</div>
+        <!--input type="submit" value="あとで登録" class="button"-->
+      </div>
+    </header>
+
+  <div class="user_content">
+  <div class="user_contents">
     <%= form_with(model: @pet, local: true) do |form| %>
 
       <div class="pet-form">
@@ -29,12 +35,12 @@
 
       <div class="pet-form">
         <%= form.label :gender, "性別" %><br />
-        <%= form.radio_button :gender, :male %>
-        <%= form.label :gender, "オス", {value: :male, style: "display: inline-block;"} %>
-        <%= form.radio_button :gender, :female %>
-        <%= form.label :gender, "メス", {value: :female, style: "display: inline-block;"} %>
-        <%= form.radio_button :gender, :female %>
-        <%= form.label :gender, "わからない", {value: :unknown, style: "display: inline-block;"} %>
+        <%= form.radio_button :gender, "オス", class: "no-style" %>
+        <%= form.label :gender, "オス" %>
+        <%= form.radio_button :gender, "メス", class: "no-style" %>
+        <%= form.label :gender, "メス" %>
+        <%= form.radio_button :gender, "わからない", class: "no-style" %>
+        <%= form.label :gender, "わからない" %>
       </div>
 
       <div class="pet-form">
@@ -63,3 +69,6 @@
 
     <% end %>
   </div>
+  </div>
+  </body>
+  </html>

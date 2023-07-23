@@ -1,40 +1,29 @@
-/* リセットCSS */
-body {
-  font-size: 14px;
-  color: #333;
-  margin: 0 auto;
-}
+/* -------writes ページ-------- */
 
-h1,h2,h3,h4,h5,h6,p {
-  padding: 10px 0;
-  margin: 0;
-}
-
-/* ヘッダー */
-
-.header {
-  height: 65px;
+/* ---heder--- */
+.header1 {
+  height: 55px;
   width: 30%;
   background-color: #FFFFFF;
-
-  margin: 10px;
+  margin: 10px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  border-bottom: 5px solid #7a7878;
 }
 
-.title {
-  font-size: 40px;
+.title1 {
+  font-size: 35px;
+  color: #7a7878;
   text-align: center;
   padding: 10px;
+  font-family: 'Aoboshi One', serif;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Potta One', cursive;
 }
 
-.header_button {
 
-}
-
-/* new */
+/* write-new */
 
 .writes_content {
 
@@ -43,7 +32,6 @@ h1,h2,h3,h4,h5,h6,p {
 .writes_content_top {
   width: 30%;
   padding: 20px;
-  border-top:5px solid #7a7878;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,7 +55,7 @@ h1,h2,h3,h4,h5,h6,p {
   display: block;
 }
 
-input[type=radio]+label:before{
+.icon_1 input[type=radio]+label:before,.icon_2 input[type=radio]+label:before{
   content: "";
   display: inline-block;
   background-size: contain;
@@ -75,36 +63,36 @@ input[type=radio]+label:before{
   height: 60px;
 }
 
-input[type=radio][value="1"]+label:before{
+.icon_1 input[type=radio][value="1"]+label:before{
 	background-image: url(meal.png);
 }
-input[type=radio][value="2"]+label:before{
+.icon_1 input[type=radio][value="2"]+label:before{
 	background-image: url(poop.png);
 }
-input[type=radio][value="3"]+label:before{
+.icon_1 input[type=radio][value="3"]+label:before{
 	background-image: url(pee.png);
 }
-input[type=radio][value="4"]+label:before{
+.icon_1 input[type=radio][value="4"]+label:before{
 	background-image: url(walk.png);
 }
-input[type=radio][value="5"]+label:before{
+.icon_2 input[type=radio][value="5"]+label:before{
 	background-image: url(vomit.png);
 }
-input[type=radio][value="6"]+label:before{
+.icon_2 input[type=radio][value="6"]+label:before{
 	background-image: url(shampoo.png);
 }
-input[type=radio][value="7"]+label:before{
+.icon_2 input[type=radio][value="7"]+label:before{
 	background-image: url(trimming.png);
 }
-input[type=radio][value="8"]+label:before{
+.icon_2 input[type=radio][value="8"]+label:before{
 	background-image: url(medicine.png);
 }
-input[type=radio]:checked+label::before{
+.icon_2 input[type=radio]:checked+label::before{
   border: 1px solid #7a7878;
   border-radius: 10px;
   box-sizing: border-box;
 }
-input[type=radio]{
+.icon_1 input[type=radio],.icon_2 input[type=radio]{
   display: none;
 }
 
@@ -131,7 +119,7 @@ input[type=radio]{
   font-size: 25px;
 }
 
-/* show */
+/* writes-show */
 
 .writes_day-main {
   height: calc(100vh - 65px);
@@ -177,7 +165,6 @@ input[type=radio]{
   margin: 20px auto 5px;
   width: 40px;
   height: 40px;
-  /*background-color: #187206; */
   color: #FFFFFF;
   border-radius: 5px 0 0 5px;
 }

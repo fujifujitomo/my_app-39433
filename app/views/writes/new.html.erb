@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="writes.css">
     <title>fam のーと</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Open+Sans:wght@300&family=Potta+One&display=swap" rel="stylesheet">
   </head>
 
 <body>
   <header>
-    <div class="header">
-      <div class="title">記録</div>
+    <div class="header1">
+      <div class="title1">記録</div>
       <div class="header_button">
         <%= link_to image_tag('time.png'), '/' %><!--記録へ-->
         <%= link_to image_tag('calender.png'), writes_path(@writes) %><!--カレンダーへ-->
@@ -18,11 +21,10 @@
     </div>
   </header>
 
-
-
     <div class="writes_content">
 
       <div class="writes_content_top">
+      <div style="white-space: nowrap;">
         <div class="icon_1">
           <input type="radio" name="must-button" value="1" id="meal" checked><label for="meal"></label>
           <input type="radio" name="must-button" value="2" id="poop" checked><label for="poop"></label>
@@ -35,6 +37,7 @@
           <input type="radio" name="must-button" value="6" id="shampoo" checked><label for="shampoo"></label>
           <input type="radio" name="must-button" value="7" id="trimming" checked><label for="trimming"></label>
           <input type="radio" name="must-button" value="8" id="medicine" checked><label for="medicine"></label>
+        </div>
         </div>
       </div>
 

@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html>
- <head>
-  <title>ペット日誌</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="users.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="user.css">
+    <title>fam のーと</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Open+Sans:wght@300&family=Potta+One&display=swap" rel="stylesheet">
+  </head>
 
-<header class="header">
-  <div class="heading">
-   <div class="title">ユーザー登録</div>
-  </div>
-</header>
+  <body>
+    <header>
+      <div class="header">
+        <div class="title">ユーザー登録</div>
+      </div>
+    </header>
 
-  <div class="content">
+    <div class="user_content">
+    <div class="user_contents">
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
-      <div class="users-form">
+      <div class="user-form">
         <%= f.label :name, "ユーザー名" %><br />
         <%= f.text_field :name, id:"user_name", autofocus: true %>
       </div>
 
-      <div class="users-form">
+      <div class="user-form">
         <%= f.label :email, "メールアドレス" %><br />
         <%= f.email_field :email, id:"user_email", autocomplete: "email" %>
       </div>
 
-      <div class="users-form">
+      <div class="user-form">
         <%= f.label :password, "パスワード（6文字以上）" %><br />
         <%= f.password_field :password, id:"user_password", autocomplete: "new-password" %>
       </div>
 
-      <div class="users-form">
+      <div class="user-form">
         <%= f.label :password_confirmation, "パスワード再入力" %><br />
         <%= f.password_field :password_confirmation, id:"user_password_confirmation", autocomplete: "new-password" %>
       </div>
@@ -41,6 +46,8 @@
         <%= f.submit "ＯＫ！", class: :form__btn  %>
       </div>
 
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+    </div>
+  </body>
 </html>
