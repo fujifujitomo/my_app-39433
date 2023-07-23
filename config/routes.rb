@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   resources :pets, only: [:index, :new, :create]
   get '/pets/index'
-  root to: "writes#index"
+  root to: "writes#new"
   resources :pets, only: [:new, :show]
   resources :writes, only: [:index, :new, :show]
 end
