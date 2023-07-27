@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema[7.0].define(version: 2023_07_21_120501) do
   create_table "pets", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "gender"
+    t.string "gender"
     t.string "kind"
     t.date "birthday"
     t.text "image"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_pets_on_user_id"
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
@@ -38,11 +38,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_21_120501) do
 
   create_table "writes", charset: "utf8", force: :cascade do |t|
     t.integer "icon"
-    t.date "input_date"
+    t.datetime "input_date"
     t.string "memo"
     t.string "schedule"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "pets", "users"
 end

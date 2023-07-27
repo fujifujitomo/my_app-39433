@@ -3,26 +3,23 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="writes.css">
+    <%= stylesheet_link_tag 'writes' %>
     <title>fam のーと</title>
   </head>
 
 <body>
   <header>
-    <div class="header">
-      <div class="title">
+    <div class="header2">
+      <div class="title2">
       <%= Date.current.strftime('%Y年 %m月 %d日') %>
       </div>
-      <div class="header_button">
 
-        <%= link_to image_tag('addition1.png'), writes_path(@writes) %>
-        <%= link_to image_tag('calender.png'), writes_path(@writes) %>
+      <div class="header_button">
+        <%= image_tag'addition1.png' %>
+        <%= image_tag'calender.png' %>
       </div>
     </div>
   </header>
-
-  
-
 
   <div class="writes_day-main">
 
@@ -41,14 +38,16 @@
       </div>-->
 
       <div class="icon">
-          <%= image_tag 'star.png', class:'icon' %>
+          <%= image_tag 'star.png' %>
       </div>
       <div class="star-content">
-        <div class="write-icon">うんち</div>
-        <div class="write-input_date">9:00
-          <div class="write-memo">ゆるい</div>
-        </div>
-      </div>
+      <ul>
+        <li> ・<%= image_tag 'meal.png', size: '25x25' %>  7:00 </li>
+        <li> ・<%= image_tag 'poop.png', size: '25x25' %>  7:15  ゆるい</li>
+        <li> ・<%= image_tag 'walk.png', size: '25x25' %>  7:30  15分間</li>
+      </ul>
+
+
 
     </div>
 

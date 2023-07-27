@@ -12,7 +12,7 @@
   <body>
     <header>
       <div class="header">
-        <div class="title"><%= "#{@pet.name}情報"%></div>
+        <div class="title"><%= "#{@pet.name}情報" %></div>
         <div class="header_button">
           <input type="image" src="image/edit.png" alt="編集へ"class="pet_infomation_button">
           <input type="image" src="image/addition.png" alt="追加へ"class="pet_infomation_button">
@@ -44,7 +44,7 @@
           </tr>
           <tr>
             <th class="table__col1">ユーザー名</th>
-            <td class="table__col2"><%= @user.name %></td>
+            <td class="table__col2"><%= @pet.user.name %></td><!--ユーザー名にする-->
           </tr>
         </tbody>
       </table>

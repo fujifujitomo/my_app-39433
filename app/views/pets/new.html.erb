@@ -24,8 +24,8 @@
     <%= form_with(model: @pet, local: true) do |form| %>
 
       <div class="pet-form">
-      <%= form.label :imag, "写真" %><br />
-       <input type="file" class="pet_image"><br>
+        <%= form.label :imag, "写真" %><br />
+        <%= form.file_field :image, class: "pet_image" %><br>
       </div>
 
       <div class="pet-form">
@@ -35,12 +35,12 @@
 
       <div class="pet-form">
         <%= form.label :gender, "性別" %><br />
-        <%= form.radio_button :gender, "オス", class: "no-style" %>
-        <%= form.label :gender, "オス" %>
-        <%= form.radio_button :gender, "メス", class: "no-style" %>
-        <%= form.label :gender, "メス" %>
-        <%= form.radio_button :gender, "わからない", class: "no-style" %>
-        <%= form.label :gender, "わからない" %>
+        <%= form.radio_button :gender, :"オス" %>
+        <%= form.label :gender_オス, "オス" %>
+        <%= form.radio_button :gender, :"メス" %>
+        <%= form.label :gender_メス, "メス" %>
+        <%= form.radio_button :gender, :"わからない" %>
+        <%= form.label :gender_わからない, "わからない" %>
       </div>
 
       <div class="pet-form">

@@ -10,54 +10,62 @@
     <link href="https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Open+Sans:wght@300&family=Potta+One&display=swap" rel="stylesheet">
   </head>
 
-<body>
-  <header>
-    <div class="header1">
-      <div class="title1">記録</div>
-      <div class="header_button">
-        <%= link_to image_tag('time.png'), '/' %><!--記録へ-->
-        <%= link_to image_tag('calender.png'), writes_path(@writes) %><!--カレンダーへ-->
+  <body>
+    <header>
+      <div class="header1">
+        <div class="title1">記録</div>
+        <div class="header_button">
+          <%= link_to image_tag('time.png'),"/" %><!--詳細ページへ-->
+          <%= link_to image_tag('calender.png'), writes_path(@writes) %><!--カレンダーへ-->
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
+ <%= form_with(model: @write, local: true) do |form| %>
     <div class="writes_content">
-
       <div class="writes_content_top">
-      <div style="white-space: nowrap;">
-        <div class="icon_1">
-          <input type="radio" name="must-button" value="1" id="meal" checked><label for="meal"></label>
-          <input type="radio" name="must-button" value="2" id="poop" checked><label for="poop"></label>
-          <input type="radio" name="must-button" value="3" id="pee" checked><label for="pee"></label>
-          <input type="radio" name="must-button" value="4" id="walk" checked><label for="walk"></label>
-        </div>
+        <div style="white-space: nowrap;">
+          <div class="icon_1">
+          <%= form.radio_button :must_button, 1, id: "meal", checked: true %>
+          <%= form.label :/, for: "meal" %>
+          <%= form.radio_button :must_button, 2, id: "poop", checked: true %>
+          <%= form.label :/, for: "poop" %>
+          <%= form.radio_button :must_button, 3, id: "pee", checked: true %>
+          <%= form.label :/, for: "pee" %>
+          <%= form.radio_button :must_button, 4, id: "walk", checked: true %>
+          <%= form.label :/, for: "walk" %>
+          </div>
 
-        <div class="icon_2">
-          <input type="radio" name="must-button" value="5" id="vomit" checked><label for="vomit"></label>
-          <input type="radio" name="must-button" value="6" id="shampoo" checked><label for="shampoo"></label>
-          <input type="radio" name="must-button" value="7" id="trimming" checked><label for="trimming"></label>
-          <input type="radio" name="must-button" value="8" id="medicine" checked><label for="medicine"></label>
-        </div>
+          <div class="icon_2">
+            <%= form.radio_button :must_button, 5, id: "vomit", checked: true %>
+            <%= form.label :/, for: "vomit" %>
+            <%= form.radio_button :must_button, 6, id: "shampoo", checked: true %>
+            <%= form.label :/, for: "shampoo" %>
+            <%= form.radio_button :must_button, 7, id: "trimming", checked: true %>
+            <%= form.label :/, for: "trimming" %>
+            <%= form.radio_button :must_button, 8, id: "medicine", checked: true %>
+            <%= form.label :/, for: "medicine" %>
+          </div>
         </div>
       </div>
 
-      <form class="writes_content_bottom">
-        <label class="writes_content_label">メモ
-          <input type="text" class="memo"><br>
-        </label>
-
-        <label class="writes_content_label">日時
-          <input type="datetime-local" class="date_time"><br>
-        </label>
-
-        <label class="writes_content_label">スケジュール
-          <input type="text" class="schedule">
-        </label>
-
-        <input type="submit" value="ＯＫ！" class="send">
+      <div class="writes_content_bottom">
+        <div class="write-form">
+          <%= form.label :memo, "メモ" %><br />
+          <%= form.text_field :memo, id:"memo" %>
+        </div>
+        <div class="write-form">
+          <%= form.label :input_date, "日時" %><br />
+          <%= form.datetime_field :input_date, id:"input_date" %>
+        </div>
+        <div class="write-form">
+          <%= form.label :schedule, "スケジュール" %><br />
+          <%= form.text_field :schedule, id:"schedule" %>
+        </div>
+        <div class="actions">
+          <%= form.submit "ＯＫ！", class: :write_form__btn  %>
+        </div>
       </div>
-
-    </div>
-</body>
-
+<% end %>
+  </body>
 </html>
