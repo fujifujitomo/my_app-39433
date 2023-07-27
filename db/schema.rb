@@ -37,13 +37,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_21_120501) do
   end
 
   create_table "writes", charset: "utf8", force: :cascade do |t|
-    t.integer "icon"
+    t.string "icon"
     t.datetime "input_date"
     t.string "memo"
     t.string "schedule"
+    t.bigint "pet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["pet_id"], name: "index_writes_on_pet_id"
   end
 
   add_foreign_key "pets", "users"
+  add_foreign_key "writes", "pets"
 end

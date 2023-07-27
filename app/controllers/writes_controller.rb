@@ -18,7 +18,6 @@ class WritesController < ApplicationController
   end
 
   def show
- 
   end
 
   private

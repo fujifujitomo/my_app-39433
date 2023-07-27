@@ -15,7 +15,7 @@
       <div class="header1">
         <div class="title1">記録</div>
         <div class="header_button">
-          <%= link_to image_tag('time.png'),"/" %><!--詳細ページへ-->
+          <%= link_to image_tag('time.png'),'writes/show' %><!--詳細ページへ-->
           <%= link_to image_tag('calender.png'), writes_path(@writes) %><!--カレンダーへ-->
         </div>
       </div>
@@ -26,24 +26,24 @@
       <div class="writes_content_top">
         <div style="white-space: nowrap;">
           <div class="icon_1">
-          <%= form.radio_button :must_button, 1, id: "meal", checked: true %>
+          <%= form.radio_button :icon, 1, id: "meal", checked: true %>
           <%= form.label :/, for: "meal" %>
-          <%= form.radio_button :must_button, 2, id: "poop", checked: true %>
+          <%= form.radio_button :icon, 2, id: "poop", checked: true %>
           <%= form.label :/, for: "poop" %>
-          <%= form.radio_button :must_button, 3, id: "pee", checked: true %>
+          <%= form.radio_button :icon, 3, id: "pee", checked: true %>
           <%= form.label :/, for: "pee" %>
-          <%= form.radio_button :must_button, 4, id: "walk", checked: true %>
+          <%= form.radio_button :icon, 4, id: "walk", checked: true %>
           <%= form.label :/, for: "walk" %>
           </div>
 
           <div class="icon_2">
-            <%= form.radio_button :must_button, 5, id: "vomit", checked: true %>
+            <%= form.radio_button :icon, 5, id: "vomit", checked: true %>
             <%= form.label :/, for: "vomit" %>
-            <%= form.radio_button :must_button, 6, id: "shampoo", checked: true %>
+            <%= form.radio_button :icon, 6, id: "shampoo", checked: true %>
             <%= form.label :/, for: "shampoo" %>
-            <%= form.radio_button :must_button, 7, id: "trimming", checked: true %>
+            <%= form.radio_button :icon, 7, id: "trimming", checked: true %>
             <%= form.label :/, for: "trimming" %>
-            <%= form.radio_button :must_button, 8, id: "medicine", checked: true %>
+            <%= form.radio_button :icon, 8, id: "medicine", checked: true %>
             <%= form.label :/, for: "medicine" %>
           </div>
         </div>

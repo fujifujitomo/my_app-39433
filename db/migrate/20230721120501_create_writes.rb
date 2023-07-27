@@ -1,10 +1,11 @@
 class CreateWrites < ActiveRecord::Migration[7.0]
   def change
     create_table :writes do |t|
-      t.integer :icon
+      t.string :icon
       t.datetime :input_date
       t.string :memo
       t.string :schedule
+      t.references :pet, foreign_key: true
       t.timestamps
     end
   end
