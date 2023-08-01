@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-
-    <title>fam のーと</title>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="pet_show.css">
+    <link rel="stylesheet" href="writes.css">
+    <title>fam のーと</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Open+Sans:wght@300&family=Potta+One&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <header>
-      <div class="header">
-        <div class="title"><%= "#{@pet.name}情報" %></div>
+      <div class="header1">
+        <div class="title1"><%= "#{@pet.name}情報" %></div>
         <div class="header_button">
-          <input type="image" src="image/edit.png" alt="編集へ"class="pet_infomation_button">
-          <input type="image" src="image/addition.png" alt="追加へ"class="pet_infomation_button">
-          <input type="image" src="image/return.png" alt="戻る"class="pet_infomation_button">
+        <%= link_to image_tag('edit.png'), writes_path(@writes) %><!--編集ページへ-->
+        <%= link_to image_tag('addition.png'), writes_path(@writes) %><!--追加ページへ-->
+        <%= link_to image_tag('return.png'), writes_path(@writes) %><!--戻る-->
+
         </div>
       </div>
    </header>
 
     <div class="pet_content_up">
       <div class='pet_img'>
-        <img src="image/test.JPG" alt="ペット画像" width="200px" height="200px">
-      </div>
+      <%= image_tag @pet.image,class:"pet-box-img" %>
+
     </div>
 
     <div class="pet_content_down">
@@ -49,5 +51,5 @@
         </tbody>
       </table>
      </div>
-       </body>
+  </body>
 </html>

@@ -15,7 +15,7 @@
       <div class="header1">
         <div class="title1">記録</div>
         <div class="header_button">
-          <%= link_to image_tag('time.png'),'writes/show' %><!--詳細ページへ-->
+          <%= link_to image_tag('time.png'),pet_path(@pets) %><!--詳細ページへ-->
           <%= link_to image_tag('calender.png'), writes_path(@writes) %><!--カレンダーへ-->
         </div>
       </div>

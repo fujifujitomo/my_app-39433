@@ -6,10 +6,13 @@ class WritesController < ApplicationController
 
   def new
     @write = Write.new
+    @pets = Pet.all
   end
 
   def create
+
     @write = Write.create(write_params)
+    binding.pry
     if @write.save
       redirect_to write_path(@write)
     else

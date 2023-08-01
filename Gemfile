@@ -74,3 +74,5 @@ end
 gem 'pry-rails'
 gem 'devise'
 gem "simple_calendar", "~> 2.4"
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'

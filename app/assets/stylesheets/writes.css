@@ -3,7 +3,7 @@
 /* ---heder--- */
 .header1 {
   height: 55px;
-  width: 30%;
+  width: 20%;
   background-color: #FFFFFF;
   margin: 10px 0;
   display: flex;
@@ -137,7 +137,7 @@
 /* writes-show */
 .header2 {
   height: 55px;
-  width: 30%;
+  width: 25%;
   background-color: #FFFFFF;
   margin: 10px 0;
   display: flex;
