@@ -49,7 +49,9 @@
   flex-direction: column;
   margin: 0 auto;
 }
- 
+
+/* write-new 
+
 .icon_1 input[type=radio]+label:before,
 .icon_2 input[type=radio]+label:before{
   content: "";
@@ -89,7 +91,7 @@
   border: 1px solid #7a7878;
   border-radius: 10px;
   box-sizing: border-box;
-}
+} */
 
 .writes_content_bottom {
   width: 80%;
@@ -129,10 +131,10 @@
   font-size: 20px;
 }
 
-/* ラジオボタンの非表示 */
+/* ラジオボタンの非表示 
 .icon_1 input[type=radio],.icon_2 input[type=radio]{
   display: none;
-}
+} */
 
 /* writes-show */
 .header2 {

@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="writes.css">
     <title>fam のーと</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,36 +14,38 @@
       <div class="header1">
         <div class="title1">記録</div>
         <div class="header_button">
-          <%= link_to image_tag('time.png'),pet_path(@pets) %><!--詳細ページへ-->
+          <%= link_to image_tag('time.png'), write_path(2) %><!--詳細ページへ-->
           <%= link_to image_tag('calender.png'), writes_path(@writes) %><!--カレンダーへ-->
         </div>
       </div>
     </header>
 
- <%= form_with(model: @write, local: true) do |form| %>
+ <%= form_with(model: @write, local: true, method: :post) do |form| %>
     <div class="writes_content">
       <div class="writes_content_top">
-        <div style="white-space: nowrap;">
+        <div style="white-space: nowrap">
           <div class="icon_1">
-          <%= form.radio_button :icon, 1, id: "meal", checked: true %>
-          <%= form.label :/, for: "meal" %>
-          <%= form.radio_button :icon, 2, id: "poop", checked: true %>
-          <%= form.label :/, for: "poop" %>
-          <%= form.radio_button :icon, 3, id: "pee", checked: true %>
-          <%= form.label :/, for: "pee" %>
-          <%= form.radio_button :icon, 4, id: "walk", checked: true %>
-          <%= form.label :/, for: "walk" %>
+          
+          <%= form.radio_button :icon, :"meal" %>
+          <%= form.label :icon_meal, "meal" %>
+          <%= form.radio_button :icon, :"poop" %>
+          <%= form.label :icon_poop, "poop" %>
+          <%= form.radio_button :icon, :"pee" %>
+          <%= form.label :icon_pee, "pee" %>
+          <%= form.radio_button :icon, :"walk" %>
+          <%= form.label :icon_walk, "walk" %>
           </div>
 
+
           <div class="icon_2">
-            <%= form.radio_button :icon, 5, id: "vomit", checked: true %>
-            <%= form.label :/, for: "vomit" %>
-            <%= form.radio_button :icon, 6, id: "shampoo", checked: true %>
-            <%= form.label :/, for: "shampoo" %>
-            <%= form.radio_button :icon, 7, id: "trimming", checked: true %>
-            <%= form.label :/, for: "trimming" %>
-            <%= form.radio_button :icon, 8, id: "medicine", checked: true %>
-            <%= form.label :/, for: "medicine" %>
+          <%= form.radio_button :icon, :"vomit" %>
+          <%= form.label :icon_vomit, "vomit" %>
+          <%= form.radio_button :icon, :"shampoo" %>
+          <%= form.label :icon_shampoo, "shampoo" %>
+          <%= form.radio_button :icon, :"trimming" %>
+          <%= form.label :icon_trimming, "trimming" %>
+          <%= form.radio_button :icon, :"medicine" %>
+          <%= form.label :icon_medicine, "medicine" %>
           </div>
         </div>
       </div>
@@ -56,7 +57,7 @@
         </div>
         <div class="write-form">
           <%= form.label :input_date, "日時" %><br />
-          <%= form.datetime_field :input_date, id:"input_date" %>
+          <%= form.datetime_field :input_date, id:"input_date", default: Time.current %>
         </div>
         <div class="write-form">
           <%= form.label :schedule, "スケジュール" %><br />

@@ -5,7 +5,8 @@ class CreateWrites < ActiveRecord::Migration[7.0]
       t.datetime :input_date
       t.string :memo
       t.string :schedule
-      t.references :pet, foreign_key: true
+      t.references :pet, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
       t.timestamps
     end
   end
