@@ -2,3 +2,6 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
+  simple_calendar:
+    previous: "<<"
+    next: ">>"
