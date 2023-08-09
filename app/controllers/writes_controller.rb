@@ -7,32 +7,34 @@ class WritesController < ApplicationController
 
   def new
     @write = Write.new
-    @pets = Pet.all
-    @pet = Pet.new
+
   end
 
   def create
-    @write = Write.new(write_params)
-    if @write.save
-      redirect_to write_path(@write)
+    write_params = params.require(:write).permit(:icon, :memo, :start_time, :schedule)
+    if
+      write_params[:start_time].blank?
+      write_params[:start_time] = Time.current
+    end
+    @write = Write.create(write_params)
+    if
+      @write.save
+      redirect_to write_path(@write), notice: 'Write was successfully created.'
     else
       render :new
     end
   end
 
   def show
-    @write = Write.find(params[:id])
+    target_date = Date.new(2023, 8, 5) # 表示したい特定の日付を設定
+    @writes = Write.where("DATE(start_time) = ?", target_date).order(:start_time)
   end
 
   private
 
   def write_params
-    permitted_params = params.require(:write).permit(:icon, :input_date, :memo, :schedule)
-    # ユーザーがログインしているかを確認してからuser_idを設定
-    user_id = current_user.id if current_user
-    # params[:pet_id]が存在するかを確認してからpet_idを設定
-    pet_id = params[:pet_id] if params[:pet_id]
-    permitted_params.merge(user_id: user_id, pet_id: pet_id)
+     params.require(:write).permit(:icon, :start_time, :memo, :schedule, :created_at)
+
   end
   
 end

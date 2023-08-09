@@ -11,7 +11,7 @@
   <header>
     <div class="header2">
       <div class="title2">
-      <%= Date.current.strftime('%Y年 %m月 %d日') %>
+       <%= @target_date &.strftime('%Y年 %m月 %d日') %>
       </div>
 
       <div class="header_button">
@@ -22,13 +22,10 @@
   </header>
 
   <div class="writes_day-main">
-
     <div class="writes-day_contents">
-
       <div class="birthday-content">
-          <%= image_tag 'happy.png' ,size: "300x100"%> <!--もし記念日なら表示-->
+        <%= image_tag 'happy.png' ,size: "300x100"%> <!--もし記念日なら表示-->
       </div>
-
 
       <!--<div class="schedule-content">
         <div class="icon">
@@ -37,23 +34,30 @@
           <div class="write-schedule">病院</div>
       </div>-->
 
-      <div class="icon">
-          <%= image_tag 'star.png' %>
-      </div>
-      <div class="star-content">
-      <ul>
-        <li> ・<%= image_tag 'meal.png', size: '25x25' %>  7:00 </li>
-        <li> ・<%= image_tag 'poop.png', size: '25x25' %>  7:15  ゆるい</li>
-        <li> ・<%= image_tag 'walk.png', size: '25x25' %>  7:30  15分間</li>
-      </ul>
-
-
+<% if @writes.present? %>
+  <div class="icon">
+    <%= image_tag 'star.png' %>
+  </div>
+  <div class="star-content">
+    <ul>
+      <% @writes.each do |write| %>
+        <li>
+          <%= write.icon %>
+          <% if write.start_time %>
+            <%= write.start_time.strftime("%H:%M") %>
+          <% else %>
+            <%= write.created_at.strftime("%H:%M") %>
+          <% end %>
+          <%= write.memo %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% else %>
+  <p>No data available.</p>
+<% end %>
 
     </div>
-
-
-
   </div>
 </body>
-
 </html>
