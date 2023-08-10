@@ -1,12 +1,14 @@
 <%= month_calendar events: @writes do |date, writes| %>
-  <%= link_to date.day, write_path(date) %>
+  <%= link_to date.day, write_path(id: date.to_s) %>
 
   <% day_writes = writes.select { |write| write.start_time.to_date == date } %>
   <% has_star_icon = false %>
   <% day_writes.each do |write| %>
     <% if write.icon.present? && !has_star_icon %>
       <div>
-        <%= link_to image_tag('star.png'), write_path(write) %>
+        <%= link_to write_path(id: date.to_s) do %> <!-- 日付の詳細ページに遷移 -->
+          <%= image_tag('star.png') %>
+        <% end %>
       </div>
       <% has_star_icon = true %>
     <% end %>

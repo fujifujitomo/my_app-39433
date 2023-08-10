@@ -27,13 +27,20 @@
         <%= image_tag 'happy.png' ,size: "300x100"%> <!--もし記念日なら表示-->
       </div>
 
-      <!--<div class="schedule-content">
-        <div class="icon">
-          <%= image_tag 'schedule.png' %>
-        </div>
-          <div class="write-schedule">病院</div>
-      </div>-->
 
+<% if @writes.present? %>
+  <div class="icon">
+    <%= image_tag 'schedule.png' %>
+  </div>
+  <div class="schedule-content">
+    <ul>
+      <% @writes.each do |write| %>
+        <li><%= write.schedule %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+      
 <% if @writes.present? %>
   <div class="icon">
     <%= image_tag 'star.png' %>
@@ -54,7 +61,7 @@
     </ul>
   </div>
 <% else %>
-  <p>No data available.</p>
+  <p>記録がありません</p>
 <% end %>
 
     </div>

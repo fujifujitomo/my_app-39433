@@ -2,12 +2,10 @@ class WritesController < ApplicationController
 
   def index
     @writes = Write.all
-
   end
 
   def new
     @write = Write.new
-
   end
 
   def create
@@ -26,15 +24,14 @@ class WritesController < ApplicationController
   end
 
   def show
-    target_date = Date.new(2023, 8, 5) # 表示したい特定の日付を設定
-    @writes = Write.where("DATE(start_time) = ?", target_date).order(:start_time)
+    @target_date = Date.parse(params[:id])
+    @writes = Write.where(start_time: @target_date.beginning_of_day..@target_date.end_of_day)
   end
 
   private
 
   def write_params
      params.require(:write).permit(:icon, :start_time, :memo, :schedule, :created_at)
-
   end
   
 end
