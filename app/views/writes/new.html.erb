@@ -14,7 +14,7 @@
       <div class="header1">
         <div class="title1">記録</div>
         <div class="header_button">
-          <%= link_to image_tag('time.png'), write_path(2) %><!--詳細ページへ-->
+          <%= link_to image_tag('time.png'), write_path(id: Date.today.to_s) %><!--詳細ページへ-->
           <%= link_to image_tag('calender.png'), writes_path(@writes) %><!--カレンダーへ-->
         </div>
       </div>
